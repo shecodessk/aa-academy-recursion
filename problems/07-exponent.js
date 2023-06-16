@@ -21,7 +21,20 @@ exponent(5, 5); // 3125
 ***********************************************************************/
 
 function exponent(b, n) {
-  // your code here
+  let result = 1;
+  if (n === 0)return;
+  if (n === 1) {return b}
+  if (n === -1) {return 1/b}
+  
+  else if(n < 0){
+    result = (1 / b) * exponent(b, n+1);
+    return result;
+  }
+  
+  else{
+    result = b * exponent(b, n-1);
+    return result;
+  }
 }
   
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

@@ -36,7 +36,22 @@ console.log(x[0] === y[0]) // true
 
 ***********************************************************************/
 
-// your code here
+const deepDup = (arr) => {
+  /* base case, Checking if the input is an array. If it is not an array, it returns the input. */
+  if (!Array.isArray(arr)) {
+    return arr;
+  }
+
+  const dup = [];
+    // next step goes here: what to do if your input IS an array
+    // recursive case, Iterating through the array and pushing the result of calling deepDup on each element of the input array into the new array. */
+    for (let i = 0; i < arr.length; i++) {
+      dup.push(deepDup(arr[i]));
+
+    }
+
+  return dup;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

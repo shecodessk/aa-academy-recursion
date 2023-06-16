@@ -21,8 +21,43 @@ sort([0, 1, -3]); // [-3, 0, 1]
 sort([]); // []
 ***********************************************************************/
 
+
+//My train of thought:
+//take one array element and compare it to the next
+//take the smallest el out of nums and add it to sorted.
+// repeat function with mutated nums and sorted until all el are added to sorted in inc num.
+//base: once nums is empty, return function
+
 function sort(nums, sorted = []) {
-  // your code here
+let min;
+let index;
+  
+  
+  //base case
+  if(nums.length < 0)return;
+
+  if(nums.length === 0)return sorted;
+
+  if(nums.length === 1){
+    
+    sorted.push(nums[0]);
+    //console.log( sorted)
+  }
+
+  else{
+  // find smallest element in num
+    min = Math.min(...nums);
+    index = nums.indexOf(min);
+    
+    sorted.push(min);
+    nums.splice(index, 1);
+
+    //console.log(sorted) 
+    //console.log(nums) 
+    return sort(nums, sorted);
+    
+  }
+  return sorted
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

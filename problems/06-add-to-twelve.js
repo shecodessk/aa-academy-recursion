@@ -14,6 +14,19 @@ addToTwelve([1]); // false
 
 // your code here
 
+const addToTwelve = function (array, i = 0){
+
+  if(i >= array.length) return;
+
+  else if(array[i] + array[i + 1] === 12){
+    return true;
+  } 
+
+  else{
+    return addToTwelve(array, i + 1) ? true :  false
+  }
+  
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = addToTwelve;

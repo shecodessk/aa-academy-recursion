@@ -11,8 +11,17 @@ sumToN(9)  // returns 45
 sumToN(-8)  // returns null
 ***********************************************************************/
 
-// your code here
+const sumToN =  (n) => {
+  let sum = 0;
+  if(n < 0 ){
+    return null
+  }
+  else{
+  sum = n + sumToN(n-1);
+  }
+  return sum
 
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = sumToN;

@@ -13,6 +13,12 @@ permutations([1, 2, 3]) // [[1, 2, 3], [1, 3, 2],
 ***********************************************************************/
 
 // your code here
+const permutations = (array) => {
+// code here
+
+}
+
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

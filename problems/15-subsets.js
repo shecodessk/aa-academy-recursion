@@ -15,6 +15,30 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
 ***********************************************************************/
 
 // your code here
+const subsets = (array) =>{
+
+  if(array.length === 0){
+    return [[]]
+  }
+
+
+  let el = array.slice(-1) // takes the last element of the array
+  let prev =  subsets(array.slice(0, -1)); //take the remaining elements of the array.
+
+  return prev.concat(addEl(prev, el))
+
+}
+
+  function addEl(arrA, el) {
+  let firstEl = arrA[0];
+  let rest = arrA.slice(1)
+
+  if (arrA.length === 1) return [firstEl.concat(el)]; // base
+
+  return [firstEl.concat(el)].concat(addEl(rest, el)) 
+}
+
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

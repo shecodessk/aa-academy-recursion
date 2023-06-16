@@ -16,7 +16,15 @@ factorial(3); // 6
 factorial(5); // 120
 ***********************************************************************/
 
-// your code here
+const factorial = (n) => {
+
+  if(n <= 0)return;
+  
+  else if(n === 1)return 1;
+
+  return n * factorial(n-1);
+  
+}
   
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

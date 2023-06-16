@@ -11,8 +11,20 @@ range(7, 6); // []
 ***********************************************************************/
 
 
-// your code here
+const range = function(start, end){
 
+
+    if(start > end){
+      return [];
+    }     
+
+    if(start === end - 1) {
+    return [start]
+  }
+     let arr = range(start, end - 1)
+      return arr.concat([end - 1])
+  
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
